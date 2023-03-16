@@ -23,21 +23,20 @@ struct Localization {
 
 ### **3. Subscribe the required classes:**
 
-*Example: Using class ViewController: UIViewController*
+*Example:*
 
-**3.1**
 ```
-@IBOutlet weak var titleLabel: UILabel!
-@IBOutlet weak var button: UIButton!
+class MainViewController: UIViewController {
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var button: UIButton!
 
-override func viewDidLoad() {
-    super.viewDidLoad()
-
-    LocalizationManager.addObserver(self)
+  override func viewDidLoad() {
+      super.viewDidLoad()
+      
+      LocalizationManager.addObserver(self) 
+  }
 }
-```
-**3.2**
-```
+
 extension MainViewController: LocalizationObserver {
     func didChangeLanguage() {
         titleLabel.text = Localization.MainViewController.title
