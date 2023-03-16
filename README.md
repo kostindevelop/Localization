@@ -1,2 +1,5 @@
 # Localization
-Change language in projects
+
+A description of this package.
+
+This small library allows you to work with localization in your application.
