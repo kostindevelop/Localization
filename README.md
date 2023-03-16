@@ -49,6 +49,10 @@ extension MainViewController: LocalizationObserver {
 }
 ```
 
+**Used:**
+- `LocalizationManager.addObserver(_ observer: LocalizationObserver)` - adds an object to the array of observers that will receive notification of language changes. And also, immediately when subscribing, it calls the `didChangeLanguage()` method of the observer in order to immediately set the current language and to avoid cases when the language has been selected, and the required class has not yet been subscribed to the notification.
+- `func didChangeLanguage()` - The method that is called when a language update occurs.
+
 Now you have subscribed the controller to the language change event and connected the localization.
 
 ____
@@ -61,7 +65,7 @@ ____
 
     *Return example:* "en".
 - `LocalizationManager.defaultLanguage` returns the default language.
-- To getfull language names in the language currently installed use `LocalizationManager.displayNames`. 
+- To get full language names in the language currently installed use `LocalizationManager.displayNames`. 
 
     *Return example (English language selected):* ["English", "Ukrainian"].
 - To find out if a specific language is installed, use the method `LocalizationManager.isSelected(index: Int)`.
