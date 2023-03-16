@@ -13,6 +13,8 @@ To use its functionality, three simple steps are required:
 *Example:*
   
 ```swift
+import Localization
+
 struct Localization {
   struct MainViewController {
     static var title: String { "title".localized }
@@ -26,6 +28,8 @@ struct Localization {
 *Example:*
 
 ```swift
+import Localization
+
 class MainViewController: UIViewController {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var button: UIButton!
